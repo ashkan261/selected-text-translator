@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Selected Text Translator",
+  "version": "1.0.0",
+  "description": "Select text to see its translation beside your pointer. Copy it with one click. Powered by MyMemory.",
+  "author": "Ashkan Mahinfallah",
+  "homepage_url": "https://www.mahinfallah.com/",
+  "icons": {"16":"icons/16.png","32":"icons/32.png","48":"icons/48.png","64":"icons/64.png","96":"icons/96.png","128":"icons/128.png"},
+  "browser_specific_settings": {"gecko":{"id":"selected-text-translator@mahinfallah.com","strict_min_version":"140.0","data_collection_permissions":{"required":["websiteContent"]}}},
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.mymemory.translated.net/*"],
+  "background": {"scripts":["languages.js","background.js"]},
+  "content_scripts":[{"matches":["http://*/*","https://*/*"],"all_frames":true,"js":["selection.js"]}],
+  "action":{"default_title":"Selected Text Translator · Settings","default_popup":"settings.html"},
+  "options_ui":{"page":"settings.html","open_in_tab":true}
+}
